@@ -141,32 +141,32 @@ publishing {
     }
 }
 
-bintray {
-    user = bintray_user
-    key = bintray_key
-    publications = ['MyPublication']
-    publish = true
-    configurations = ['archives']
-    pkg {
-        repo = 'SolarNetwork'
-        name = 'killbill-invoice-formatter'
-        userOrg = 'solarnetwork'
-        licenses = ['Apache-2.0']
-        websiteUrl = 'https://github.com/SolarNetwork/killbill-invoice-formatter'
-        issueTrackerUrl = 'https://github.com/SolarNetwork/killbill-invoice-formatter/issues'
-        vcsUrl = 'https://github.com/SolarNetwork/killbill-invoice-formatter.git'
-        version {
-            name = project.version
-            desc = project.description
-            released  = new Date()
-            vcsTag = project.version
-            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
-            gpg {
-                sign = true
-                passphrase = bintray_gpg_passphrase
-            }
-        }
-    }
-}
+// bintray {
+//     user = bintray_user
+//     key = bintray_key
+//     publications = ['MyPublication']
+//     publish = true
+//     configurations = ['archives']
+//     pkg {
+//         repo = 'SolarNetwork'
+//         name = 'killbill-invoice-formatter'
+//         userOrg = 'solarnetwork'
+//         licenses = ['Apache-2.0']
+//         websiteUrl = 'https://github.com/SolarNetwork/killbill-invoice-formatter'
+//         issueTrackerUrl = 'https://github.com/SolarNetwork/killbill-invoice-formatter/issues'
+//         vcsUrl = 'https://github.com/SolarNetwork/killbill-invoice-formatter.git'
+//         version {
+//             name = project.version
+//             desc = project.description
+//             released  = new Date()
+//             vcsTag = project.version
+//             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+//             gpg {
+//                 sign = true
+//                 passphrase = bintray_gpg_passphrase
+//             }
+//         }
+//     }
+// }
 
 afterReleaseBuild.dependsOn bintrayUpload
